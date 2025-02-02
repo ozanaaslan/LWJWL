@@ -151,7 +151,7 @@ public class MyApi {
 ```
 
 - **GET /greet**: Returns a "Welcome to LWJWL!" message.
-- **POST /add**: Accepts two parameters `a` and `b`, then returns their sum.
+
 
 ## License
 
