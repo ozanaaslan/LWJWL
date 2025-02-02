@@ -41,15 +41,15 @@ public class Response {
         this.responseType = ResponseType.BYTES;
     }
 
-    public Response(Status status, URL redirectionUrl) {
+    public Response(int status, URL redirectionUrl) {
         this.redirect = redirectionUrl;
-        this.statusCode = status.getStatusCode();
+        this.statusCode = status;
         this.responseType = ResponseType.REDIRECT;
     }
 
-    public Response(Status status, boolean download, File file) {
+    public Response(int status, boolean download, File file) {
         this.file = file;
-        this.statusCode = status.getStatusCode();
+        this.statusCode = status;
         this.responseType = ResponseType.FILE;
         if (download)
             this.responseType = ResponseType.DOWNLOAD;
@@ -76,6 +76,13 @@ public class Response {
         return new Response(status, ContentType.TEXT_PLAIN, plain);
     }
 
+    public static Response file(int status, File file){
+        return new Response(status, true, file);
+    }
+
+    public static Response redirect(int status, String url){
+        return new Response(status, new URL(url));
+    }
 
 }
 
