@@ -81,13 +81,13 @@ public class Main {
 
     // Example GET endpoint
     @Endpoint("/hello") @GET
-    public static Response helloEndpoint() {
+    public static Response helloEndpoint(EndpointController endpointController) {
         return Response.json(200, "Hello, world!");
     }
 
     // Example POST endpoint
     @Endpoint("/postExample") @POST
-    public static Response postEndpoint(@Param("id") String id) {
+    public static Response postEndpoint(EndpointController endpointController, @Param("id") String id) {
         return Response.json(200, "Received ID: " + id);
     }
 }
