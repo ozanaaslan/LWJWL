@@ -143,7 +143,7 @@ public class MyApi {
     }
 
     @Endpoint("/greet") @GET
-    public static Response greetEndpoint() {
+    public static Response greetEndpoint(EndpointController endpointController) {
         return Response.json(200, "Welcome to LWJWL!");
     }
 
