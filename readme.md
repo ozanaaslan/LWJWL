@@ -147,10 +147,6 @@ public class MyApi {
         return Response.json(200, "Welcome to LWJWL!");
     }
 
-    @Endpoint("/add") @POST
-    public static Response addEndpoint(@Param("a") int a, @Param("b") int b) {
-        return Response.json(200, "Sum: " + (a + b));
-    }
 }
 ```
 
